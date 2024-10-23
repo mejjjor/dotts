@@ -1,0 +1,11 @@
+---
+- name: Create an empty file
+  file:
+    path: "~/newfile.txt"
+    state: touch
+
+- name: Create symbolic link 
+  file:
+    src: "~/newfile.txt"
+    dest: "~/newfile_ln.txt"
+    state: link
