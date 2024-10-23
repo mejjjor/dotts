@@ -1,0 +1,1 @@
+curl -L https://github.com/mejjjor/dotts/raw/main/install.sh | bash
