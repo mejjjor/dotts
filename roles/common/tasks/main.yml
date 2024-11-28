@@ -3,5 +3,6 @@
   ansible.builtin.apt:
     name:
       - wget
+      - curl
       - gpg
     state: present
