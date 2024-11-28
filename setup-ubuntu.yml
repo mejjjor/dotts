@@ -3,7 +3,8 @@
   hosts: all
 
   roles:
-    - { role: update-packages, become: true }
-    - { role: regolith, become: true }
-    - { role: common, become: true }
-    - { role: vscode, become: true }
+    # - { role: update-packages, become: true }
+    # - { role: regolith, become: true }
+    # - { role: common, become: true }
+    # - { role: vscode, become: true }
+    - { role: 1password, become: true }
