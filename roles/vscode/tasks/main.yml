@@ -1,4 +1,11 @@
 ---
+- name: Set the code/add-microsoft-repo option
+  ansible.builtin.debconf:
+    name: "code"
+    question: "code/add-microsoft-repo"
+    value: "true"
+    vtype: "boolean"
+
 - name: Add Microsoft GPG key
   ansible.builtin.apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc

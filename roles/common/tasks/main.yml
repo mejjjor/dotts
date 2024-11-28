@@ -1,0 +1,7 @@
+---
+- name: Install common lib
+  ansible.builtin.apt:
+    name:
+      - wget
+      - gpg
+    state: present
