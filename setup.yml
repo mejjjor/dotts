@@ -1,7 +1,0 @@
----
-- name: Setup env 
-  hosts: all
-
-  roles:
-    # - { role: update, become: true }
-    - { role: create_dot_file }

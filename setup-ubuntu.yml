@@ -1,0 +1,8 @@
+---
+- name: Setup env
+  hosts: all
+
+  roles:
+    - { role: update-packages, become: true }
+    - { role: regolith, become: true }
+    # - { role: dev-utils, become: true }

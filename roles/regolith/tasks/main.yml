@@ -1,0 +1,30 @@
+---
+- name: Download the Regolith public key
+  ansible.builtin.get_url:
+    url: https://regolith-desktop.org/regolith.key
+    dest: /tmp/regolith.key
+    mode: "0600"
+
+- name: Register the Regolith public key
+  ansible.builtin.command:
+    cmd: gpg --dearmor -o /usr/share/keyrings/regolith-archive-keyring.gpg /tmp/regolith.key
+    creates: /usr/share/keyrings/regolith-archive-keyring.gpg
+
+- name: Add Regolith repository
+  ansible.builtin.copy:
+    content: |
+      deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-3_2-ubuntu-noble-amd64 noble main
+    dest: /etc/apt/sources.list.d/regolith.list
+    mode: "0600"
+
+- name: Update apt
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install Regolith desktop
+  ansible.builtin.apt:
+    name:
+      - regolith-desktop
+      - regolith-session-flashback
+      - regolith-look-lascaille
+    state: present
