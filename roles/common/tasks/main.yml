@@ -18,6 +18,7 @@
       - gnome-shell-extensions-gpaste
       - python3-pip
       - gpaste-2
+      - fzf
     state: present
 
 - name: Install common lib with snap
