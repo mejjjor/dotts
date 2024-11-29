@@ -1,1 +1,16 @@
 ---
+- name: Create a symlink for gitconfig
+  ansible.builtin.file:
+    src: "/home/{{ user }}/dotts/config/git/.gitconfig"
+    dest: "/home/{{ user }}/.gitconfig"
+    state: link
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Create a symlink for gitignore
+  ansible.builtin.file:
+    src: "/home/{{ user }}/dotts/config/git/.gitignore"
+    dest: "/home/{{ user }}/.gitignore"
+    state: link
+    owner: "{{ user }}"
+    group: "{{ user }}"

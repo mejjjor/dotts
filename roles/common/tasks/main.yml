@@ -1,5 +1,5 @@
 ---
-- name: Install common lib
+- name: Install common lib with apt
   ansible.builtin.apt:
     name:
       - wget
@@ -13,7 +13,12 @@
       - i3xrocks-temp
       - htop
       - vim
-      - zsh
       - xcwd
       - ansible-lint
+      - fnm
     state: present
+
+- name: Install common lib with snap
+  community.general.snap:
+    name:
+      - slack
