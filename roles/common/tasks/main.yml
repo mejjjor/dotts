@@ -15,7 +15,6 @@
       - vim
       - xcwd
       - ansible-lint
-      - gnome-shell-extensions-gpaste
       - python3-pip
       - gpaste-2
       - fzf

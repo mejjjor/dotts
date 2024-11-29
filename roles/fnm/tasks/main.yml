@@ -1,4 +1,10 @@
 ---
+- name: Check if fnm is already installed
+  ansible.builtin.command: which fnm
+  register: fnm_check
+  ignore_errors: true
+  changed_when: fnm_check.rc != 0
+
 - name: Download fnm installation script
   ansible.builtin.get_url:
     url: https://fnm.vercel.app/install
@@ -6,6 +12,7 @@
     mode: "0777"
     owner: "{{ user }}"
     group: "{{ user }}"
+  when: fnm_check.rc != 0
 
 - name: Run fnm installation script
   ansible.builtin.command: sh /tmp/install_fnm.sh
@@ -13,3 +20,4 @@
   register: fnm_result
   failed_when: "'FAILED' in fnm_result.stderr"
   changed_when: fnm_result.rc != 0
+  when: fnm_check.rc != 0
