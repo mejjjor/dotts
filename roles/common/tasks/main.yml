@@ -15,9 +15,13 @@
       - vim
       - xcwd
       - ansible-lint
+      - gnome-shell-extensions-gpaste
+      - python3-pip
+      - gpaste-2
     state: present
 
 - name: Install common lib with snap
   community.general.snap:
     name:
       - slack
+      - vlc
