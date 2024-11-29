@@ -1,0 +1,15 @@
+---
+- name: Download fnm installation script
+  ansible.builtin.get_url:
+    url: https://fnm.vercel.app/install
+    dest: /tmp/install_fnm.sh
+    mode: "0777"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Run fnm installation script
+  ansible.builtin.command: sh /tmp/install_fnm.sh
+  become_user: "{{ user }}"
+  register: fnm_result
+  failed_when: "'FAILED' in fnm_result.stderr"
+  changed_when: fnm_result.rc != 0

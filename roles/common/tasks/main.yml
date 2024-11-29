@@ -15,7 +15,6 @@
       - vim
       - xcwd
       - ansible-lint
-      - fnm
     state: present
 
 - name: Install common lib with snap
