@@ -5,4 +5,15 @@
       - wget
       - curl
       - gpg
+      - python3
+      - python-is-python3
+      - i3xrocks-battery
+      - i3xrocks-memory
+      - i3xrocks-wifi
+      - i3xrocks-temp
+      - htop
+      - vim
+      - zsh
+      - xcwd
+      - ansible-lint
     state: present

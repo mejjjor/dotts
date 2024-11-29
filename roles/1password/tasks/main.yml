@@ -16,7 +16,7 @@
     path: /etc/apt/sources.list.d/1password.list
     line: 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main'
     create: true
-    mode: "0600"
+    mode: "0644"
 
 - name: Create the necessary directory for debsig policy
   ansible.builtin.file:

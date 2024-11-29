@@ -3,7 +3,7 @@
   ansible.builtin.get_url:
     url: https://regolith-desktop.org/regolith.key
     dest: /tmp/regolith.key
-    mode: "0600"
+    mode: "0644"
 
 - name: Register the Regolith public key
   ansible.builtin.command:
@@ -15,7 +15,7 @@
     content: |
       deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-3_2-ubuntu-noble-amd64 noble main
     dest: /etc/apt/sources.list.d/regolith.list
-    mode: "0600"
+    mode: "0644"
 
 - name: Update apt
   ansible.builtin.apt:
@@ -27,4 +27,24 @@
       - regolith-desktop
       - regolith-session-flashback
       - regolith-look-lascaille
+      - i3xrocks-net-traffic
+      - i3xrocks-cpu-usage
+      - i3xrocks-time
+      - i3xrocks-battery
+      - i3xrocks-memory
+      - i3xrocks-wifi
+      - i3xrocks-temp
     state: present
+
+- name: Remove config folder
+  ansible.builtin.file:
+    path: "/home/{{ user }}/.config/regolith3"
+    state: absent
+
+- name: Create a symlink to configuration folder
+  ansible.builtin.file:
+    src: "/home/{{ user }}/dotts/config/regolith"
+    dest: "/home/{{ user }}/.config/regolith3"
+    state: link
+    owner: "{{ user }}"
+    group: "{{ user }}"

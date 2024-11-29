@@ -10,9 +10,9 @@
     path: /etc/apt/sources.list.d/brave-browser-release.list
     line: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
     create: true
-    mode: "0600"
+    mode: "0644"
 
-- name: Update apt cache and install 1Password
+- name: Update apt cache and install Brave
   ansible.builtin.apt:
     update_cache: true
     name: brave-browser
