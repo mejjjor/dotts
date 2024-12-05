@@ -146,13 +146,8 @@ fi
 
 
 alias l="ll -a"
+alias d="docker"
+alias dc="docker compose"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fnm
-FNM_PATH="/home/riko/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/riko/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi

@@ -18,6 +18,7 @@
       - python3-pip
       - gpaste-2
       - fzf
+      - flameshot
     state: present
 
 - name: Install common lib with snap
@@ -25,3 +26,4 @@
     name:
       - slack
       - vlc
+      - dbeaver-ce
