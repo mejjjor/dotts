@@ -6,3 +6,5 @@
 	gpgsign = true
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKJVEEuCPIraSbM3qR29/QY+wMJNKGHt3s/QURptMaFK
+	name = Erik Aouizerate
+	email = erik.aouizerate@mintset.io

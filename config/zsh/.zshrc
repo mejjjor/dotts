@@ -149,5 +149,8 @@ alias l="ll -a"
 alias d="docker"
 alias dc="docker compose"
 
+alias gsu="git stash -u"
+alias gpf="git push --force-with-lease"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
