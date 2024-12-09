@@ -19,6 +19,8 @@
       - gpaste-2
       - fzf
       - flameshot
+      - mysql-client
+      - postgresql-client
     state: present
 
 - name: Install common lib with snap
