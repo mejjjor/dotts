@@ -21,6 +21,7 @@
       - flameshot
       - mysql-client
       - postgresql-client
+      - alacritty
     state: present
 
 - name: Install common lib with snap

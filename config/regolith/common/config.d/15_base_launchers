@@ -4,7 +4,7 @@
 
 ## Launch // Terminal // <> Enter ##
 set_from_resource $wm.binding.terminal wm.binding.terminal Return
-set_from_resource $wm.program.terminal wm.program.terminal gnome-terminal --working-directory="`xcwd`"
+set_from_resource $wm.program.terminal wm.program.terminal alacritty --working-directory="`xcwd`"
 bindsym $mod+$wm.binding.terminal exec --no-startup-id systemd-run --user --scope $wm.program.terminal
 
 ## Launch // Browser // <><Shift> Enter ##

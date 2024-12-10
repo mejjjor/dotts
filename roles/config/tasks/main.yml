@@ -14,3 +14,19 @@
     state: link
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: Create alacritty folder
+  ansible.builtin.file:
+    path: "/home/{{ user }}/.config/alacritty"
+    state: directory
+    mode: "700"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Create a symlink for alacritty
+  ansible.builtin.file:
+    src: "/home/{{ user }}/dotts/config/alacritty/alacritty.toml"
+    dest: "/home/{{ user }}/.config/alacritty/alacritty.toml"
+    state: link
+    owner: "{{ user }}"
+    group: "{{ user }}"
