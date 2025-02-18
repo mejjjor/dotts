@@ -33,4 +33,4 @@ set_from_resource $wm.program.media-keys wm.program.media-keys /usr/libexec/gnom
 exec --no-startup-id $wm.program.media-keys
 
 # gpaste (clipboard)
-bindsym $mod+x exec gpaste-client ui
+bindsym $mod+x exec copyq menu

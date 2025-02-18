@@ -22,6 +22,8 @@
       - mysql-client
       - postgresql-client
       - alacritty
+      - php
+      - copyq
     state: present
 
 - name: Install common lib with snap
